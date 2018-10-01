@@ -51,8 +51,8 @@ public class ParallelFlowReport implements WorkReport {
      * The status of a parallel flow is defined as follows:
      *
      * <ul>
-     *     <li>{@link org.work.flows.work.WorkStatus#COMPLETED}: If all works have successfully completed</li>
-     *     <li>{@link org.work.flows.work.WorkStatus#FAILED}: If one of the works has failed</li>
+     *     <li>COMPLETED: If all works have successfully completed</li>
+     *     <li>FAILED: If one of the works has failed</li>
      * </ul>
      * @return workflow status
      */

@@ -4,7 +4,6 @@ import static org.work.flows.engine.WorkFlowEngineBuilder.aNewWorkFlowEngine;
 import static org.work.flows.work.WorkReportPredicate.COMPLETED;
 import static org.work.flows.workflow.ConditionalFlow.Builder.aNewConditionalFlow;
 import static org.work.flows.workflow.ParallelFlow.Builder.aNewParallelFlow;
-import static org.work.flows.workflow.RepeatFlow.Builder.aNewRepeatFlow;
 import static org.work.flows.workflow.SequentialFlow.Builder.aNewSequentialFlow;
 
 import org.junit.Test;
@@ -31,7 +30,7 @@ public class HedgeFundImplTest {
 		HedgeFundWork work5 = new HedgeFundWork("Operations Approval");
 
         WorkFlow workflow = aNewSequentialFlow()
-                .execute(aNewRepeatFlow()   // Start workflow with the request
+                .execute(aNewSequentialFlow()   // Start workflow with the request
                             .named(work1.getName())  
                             .build())
                 .then(aNewConditionalFlow()
